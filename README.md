@@ -9,8 +9,8 @@ diabetes_false_count = len(data.loc[data['Outcome'] == 0])
 outcome=1 suggests that the person has diabetes and 0 suggests that the person does not have diabetes.
 Next, we create independent and Dependent Features,  X contains all the columns except "Outcome" which is our target variable and Y contains the "Outcome" variable.
 Using the train_test_split model we split our data into train and test data
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state=10)
-This means 70% is train data on which we train our model and 30% is the test data on which we check our accuracy.
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state=10)
+This means 80% is train data on which we train our model and 20% is the test data on which we check our accuracy.
 The dataset does not contain any missing values however, the value of some variables is zero which cannot be, So we mark zero values as missing or NaN
 
 from numpy import nan
@@ -28,4 +28,4 @@ We fit our model on X_tarin and y_train and predict on X_test.
 
 scikit-learn has a handy function we can use to calculate accuracy: metrics.accuracy_score(). The function accepts two parameters,the actual values and our predicted values respectively, and returns our accuracy score.
 
-Our model gives an accuracy of 72.727% when tested against our 30% test set. 
+Our model gives an accuracy of 75.974% when tested against our 20% test set. 
