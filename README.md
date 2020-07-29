@@ -11,4 +11,21 @@ Next, we create independent and Dependent Features,  X contains all the columns 
 Using the train_test_split model we split our data into train and test data
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state=10)
 This means 70% is train data on which we train our model and 30% is the test data on which we check our accuracy.
-The dataset does not contain any missing values however, the value of some variables is zero which cannot be, 
+The dataset does not contain any missing values however, the value of some variables is zero which cannot be, So we mark zero values as missing or NaN
+
+from numpy import nan
+X_train[['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age']] = X_train[['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age']].replace(0, nan)
+X_test[['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age']] = 
+X_test[['Pregnancies','Glucose','BloodPressure','SkinThickness','Insulin','BMI','DiabetesPedigreeFunction','Age']].replace(0, nan)
+
+and fill these missing values with mean column values
+X_train.fillna(X_train.mean(), inplace=True)
+X_test.fillna(X_test.mean(), inplace=True)
+
+We use Random Forest for classification. A random forest is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. The sub-sample size is controlled with the max_samples parameter if bootstrap=True (default), otherwise the whole dataset is used to build each tree.
+
+We fit our model on X_tarin and y_train and predict on X_test.
+
+scikit-learn has a handy function we can use to calculate accuracy: metrics.accuracy_score(). The function accepts two parameters,the actual values and our predicted values respectively, and returns our accuracy score.
+
+Our model gives an accuracy of 72.727%.
