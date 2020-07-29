@@ -28,4 +28,4 @@ We fit our model on X_tarin and y_train and predict on X_test.
 
 scikit-learn has a handy function we can use to calculate accuracy: metrics.accuracy_score(). The function accepts two parameters,the actual values and our predicted values respectively, and returns our accuracy score.
 
-Our model gives an accuracy of 72.727%.
+Our model gives an accuracy of 72.727% when tested against our 30% test set. 
