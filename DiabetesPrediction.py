@@ -17,7 +17,7 @@ print(data.head(5))
 print(data.isnull().values.any())
 
 
-#print(data.corr())
+print(data.corr())
 
 # Correlation
 #get correlations of each features in dataset
@@ -45,7 +45,7 @@ predicted_class="Outcome"
 X=data[feature_columns]
 y=data[predicted_class]
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.30, random_state=10)
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size = 0.20, random_state=10)
 
 # mark zero values as missing or NaN
 from numpy import nan
