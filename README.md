@@ -24,7 +24,7 @@ X_test.fillna(X_test.mean(), inplace=True)
 
 We use Random Forest for classification. A random forest is a meta estimator that fits a number of decision tree classifiers on various sub-samples of the dataset and uses averaging to improve the predictive accuracy and control over-fitting. The sub-sample size is controlled with the max_samples parameter if bootstrap=True (default), otherwise the whole dataset is used to build each tree.
 
-We fit our model on X_tarin and y_train and predict on X_test.
+We fit our model on X_train and y_train and predict on X_test.
 
 scikit-learn has a handy function we can use to calculate accuracy: metrics.accuracy_score(). The function accepts two parameters,the actual values and our predicted values respectively, and returns our accuracy score.
 
